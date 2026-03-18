@@ -34,10 +34,10 @@ type Screen = 'home' | 'edit' | 'speak' | 'final';
 
 // --- Components ---
 
-const WatermarkBox = ({ data, onClick }: { data: WatermarkData; onClick?: () => void }) => (
+const WatermarkBox = ({ data, onClick, className = "bottom-40 left-4" }: { data: WatermarkData; onClick?: () => void; className?: string }) => (
   <div 
     onClick={onClick}
-    className="absolute bottom-40 left-4 bg-blue-600/40 backdrop-blur-md border border-white/20 p-3 rounded-sm text-[10px] leading-tight w-64 cursor-pointer"
+    className={`absolute bg-blue-600/40 backdrop-blur-md border border-white/20 p-3 rounded-sm text-[10px] leading-tight w-64 cursor-pointer ${className}`}
   >
     <div className="flex items-center gap-2 mb-1 border-b border-white/20 pb-1">
       <div className="w-8 h-8 bg-blue-500 flex items-center justify-center text-[8px] font-bold text-white leading-none text-center">
@@ -122,7 +122,7 @@ export default function App() {
           referrerPolicy="no-referrer"
         />
         
-        <WatermarkBox data={watermarkData} onClick={() => setScreen('edit')} />
+        <WatermarkBox data={watermarkData} onClick={() => setScreen('edit')} className="bottom-[140px] left-4" />
 
         <div className="absolute bottom-4 right-4 bg-blue-600 px-3 py-1.5 rounded-full flex items-center gap-1 text-xs font-bold">
           <span>+ 新项目</span>
@@ -197,7 +197,7 @@ export default function App() {
           referrerPolicy="no-referrer"
         />
         <div className="absolute top-10 left-4 scale-90 origin-top-left">
-           <WatermarkBox data={watermarkData} />
+           <WatermarkBox data={watermarkData} className="top-0 left-0" />
         </div>
       </div>
 
@@ -354,7 +354,7 @@ export default function App() {
           <div className="text-[10px]">0.5</div>
         </div>
 
-        <WatermarkBox data={watermarkData} onClick={() => setScreen('edit')} />
+        <WatermarkBox data={watermarkData} onClick={() => setScreen('edit')} className="bottom-[140px] left-4" />
 
         <div className="absolute bottom-4 right-4 bg-blue-600 px-3 py-1.5 rounded-full flex items-center gap-1 text-xs font-bold">
           <span>+ 新项目</span>
