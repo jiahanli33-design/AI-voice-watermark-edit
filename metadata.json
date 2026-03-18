@@ -1,0 +1,7 @@
+{
+  "name": "Jiahan Li_IntelliVoice Watermark Test",
+  "description": "An intelligent voice-controlled watermark editing application for construction and project documentation.",
+  "requestFramePermissions": [
+    "microphone"
+  ]
+}
